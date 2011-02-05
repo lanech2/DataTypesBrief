@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Unions</title>
+<link rel="Stylesheet" type="text/css" href="brief.css" />
+</head>
+<body>
+<h1 class="title" align="center">Union Types</h1>
+    <hr />
+    <ul>
+        <li><b>Union Type: </b>a type whose variables are allowed to store different type 
+            values at different times during execution</li>
+        <li><b>Design issues:</b><ul>
+            <li>Should type checking be required? (Must be dynamic)</li>
+            <li>Should unions be embedded in records? </li>
+            </ul>
+        </li>
+        <li><b>Discriminated vs. Free Unions:</b><ul>
+            <li>Fortran, C, and C++ provide union constructs in which there is no language 
+                support for type checking; the union in these languages is called <font color=yellow>free union</font></li>
+            <li>&nbsp;Type checking of unions requires that each union include a type indicator 
+                called a <font color=yellow>discriminant</font> Supported by Ada </li>
+            </ul>
+        </li>
+        <li>Ada Union Types:<ul>
+            <li><code>type Shape is (Circle, Triangle, Rectangle);
+            <br />type Colors is (Red, Green, Blue); 
+            <br />type Figure (Form: Shape) is record 
+            <br />&nbsp;&nbsp; Filled: Boolean; 
+            <br />&nbsp;&nbsp; Color: Colors; 
+            <br />&nbsp;&nbsp; case Form is 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Circle =&gt; Diameter: Float; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Triangle =&gt; Leftside, Rightside: Integer; Angle: Float; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Rectangle =&gt; Side1, Side2: Integer; 
+            <br />&nbsp;&nbsp; end case; 
+            <br />end record;</code>
+            </li>
+        <p><img alt="Ada Union" src=unions.png style="height: 209px; width: 478px"/></p>
+            </ul>
+        </li>
+        <li><b>Evaluation:</b><ul>
+            <li>Free unions are unsafe - Do not allow type checking </li>
+            <li>Java and C# do not support unions reflective of growing concerns for safety in 
+                programming language </li>
+            <li>Ada’s discriminated unions are safe</li>
+            </ul>
+        </li>
+    </ul>
+
+<div class="navbar" align="center" style="color: #FFFF00">
+<hr>
+<a href="records.htm">previous</a> &nbsp; <a href="pointers.htm">next</a>
+&nbsp; <a href="DataTypes.htm">contents</a><br /><br />
+</div>
+
+</body>
+</html>

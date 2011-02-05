@@ -5,6 +5,142 @@
 </head>
 <body>
 <h1 class="title" align="center">Array Types</h1>
+    <hr />
+    <ul>
+        <li><b>Array Type:</b> collection of the <font color="Yellow">same type (homogeneuos)</font> of data elements in which each 
+            element is ID&#39;d by it&#39;s position in the collection, relative to the first 
+            element.</li>
+        <li><b>Design Issues:</b><ul>
+            <li>What types are legal for subscripts?</li>
+            <li>Are subscripting expressions in element references range checked?</li>
+            <li>When are subscript ranges bound?</li>
+            <li>When does allocation occur?</li>
+            <li>What is the max number of subscripts?</li>
+            <li>Can array objects be initialized?</li>
+            <li>Are slices supported?</li>
+            </ul>
+        </li>
+        <li><b>Array Indexing:</b> Subscripting (or Indexing) is a mapping from subscripts 
+            to elements in the array<ul>
+                <li>Subscript Syntax 
+                    <ul>
+                        <li>FORTRAN, PL/I, Ada use parentheses </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <ul>
+            <ul>
+                <li>Most other languages use brackets</li>
+            </ul>
+            <li>Subscript Types<ul>
+                <li>FORTRAN, C: integer only</li>
+                <li>Ada: integer or enumeration (includes Boolean and char)</li>
+                <li>Java: integer types only</li>
+                </ul>
+            </li>
+            <li>Index range checking<ul>
+                <li>C, C++, Perl, and Fortran do not specify range checking</li>
+                <li>Java, ML, C# specify range checking</li>
+                <li>In Ada, the default is to require range checking, but it can be turned off</li>
+                </ul>
+            <li>Subscript Binding and Array Categories:</li>
+            </li>
+            <p><img alt="Array storage categories" src=arrays1.png style="height: 253px; width: 941px" /></p>
+        </ul>
+        <li><b>Array Initialization:</b> Some languages allow initialization at the time of storage 
+            allocation<ul>
+                <li>C, C++, Java, C#<ul>
+                    <li><code>int list [] = {4, 5, 7, 83};</code></li>
+                    </ul>
+                </li>
+                <li>Character strings in C and C++
+                    <ul>
+                        <li><code>char name [] = “freddie”;</code></li>
+                    </ul>
+                </li>
+                <li>Arrays of strings in C and C++
+                    <ul>
+                        <li><code>char *names [] = {“Bob”, “Jake”, “Joe”];</code></li>
+                    </ul>
+                </li>
+                <li>Java initialization of String objects
+                    <ul>
+                        <li><code>String[] names = {“Bob”, “Jake”, “Joe”};</code></li>
+                    </ul>
+                </li>
+                <li>Ada List :
+                    <ul>
+                        <li><code>array (1..5) of Integer := (1 =&gt; 17, 3 =&gt; 34, others =&gt; 0);</code></li>
+                    </ul>
+                </li>
+                <li>Python List comprehensions - function is applied to each element of an array and a new array is constructed from the results
+                    <ul>
+                        <li><code>list = [x ** 2 for x in range(12) if x % 3 == 0] puts [0, 9, 36, 81] in list</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b>Array Operations:</b> The most common array operations are <font color="Yellow">Assignment, Catenation, Comparison and Slices</font>
+            <ul>
+                <li>C-based languages do not provide array operations except through methods of 
+                    Java, C++, and C#</li>
+                <li>Perl supports array operations but not comparisons</li>
+                <li>APL provides the most powerful array-processing operations operations ever 
+                    devised</li>
+                <li>Ada allows array assignment but also catenation</li>
+                <li>Python supports array assignments, but they are only reference changes. Python 
+                    also supports array catenation and element membership operations</li>
+                <li>Ruby provides array catenation</li>
+                <li>Fortran provides elemental operations because they are between pairs of array 
+                    elements For example, + operator between two arrays results in an array of the 
+                    sums of the element pairs of the two arrays </li>
+            </ul>
+        </li>
+        <li><b>Rectangular and Jagged Arrays</b><ul>
+            <li>A rectangular array is a multi-dimensioned array in which all of the rows have 
+                the same number of elements and all columns have the same number of elements
+            </li>
+            <li>A jagged array has rows with varying number of elements<ul>
+                <li>Possible when multi-dimensioned arrays actually appear as arrays of arrays</li>
+                </ul>
+            </li>
+            <li>C, C++, and Java support jagged arrays - Use separate pair of brackets for each dimension:<ul>
+                <li>&nbsp;<code>myArray[3][7]</code></li>
+                </ul>
+            </li>
+            <li>Fortran, Ada, and C# support rectangular arrays (C# also supports jagged arrays)&nbsp; 
+                - Use single pair of brackets:<ul>
+                    <li>&nbsp;<code>myArray[3, 7]</code></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        <li><b>Slices:</b> A slice of an array is some substructure of that array<ul>
+            <li>Simply a mechanism for referencing part of an array as a unit.</li>
+            <li>Only useful in languages that support operations</li>
+            </ul>
+        </li>
+        <li><b>Accessing Multi-Dimensional Arrays:</b><ul>
+        <p><img alt="Multi-dimensional Array" src=matrix.png 
+                style="height: 94px; width: 151px"/></p>
+            <li>Two common ways:<ul>
+                <li>Row Major Order - used in most languages<ul>
+                    <li>3, 4, 7, 6, 2, 5, 7, 5, 8</li>
+                    </ul>
+                </li>
+                <li>Column Major Order - used in Fortran<ul>
+                    <li>3, 6, 1, 4, 2, 3, 7, 5, 8</li>
+                    </ul>
+                </li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        <li><b>Implementation</b>
+        <p><img alt="Array Compile-time Descriptors" src=arrays2.png 
+                style="height: 211px; width: 339px"/></p>
+    </ul>
 
 <div class="navbar" align="center" style="color: #FFFF00">
 <hr>

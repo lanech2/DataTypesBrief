@@ -2,12 +2,58 @@
 <head>
 <title>Ordinals</title>
 <link rel="Stylesheet" type="text/css" href="brief.css" />
-</head>
+    </head>
 <body>
 <h1 class="title" align="center">User-Defined Ordinal Types</h1>
-
+    <hr />
+    <ul>
+        <li><b>Ordinal Type: </b>type in which the range of possible values can be easily 
+            associated with the set of positive integers.</li>
+        <li><b>Enumerations:</b> type where all possible values are provided in the 
+            definiton as named constants<ul>
+                <li>Example in C#:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>days{mon, tue, wed, thu, fri, sat, sun}; </code></li>
+                <li><b>Design Issues:</b><ul>
+                    <li>Is an enum constant allowed to appear in more than one type def, if so, how is 
+                the type of an occurence of that constant checked?</li>
+                    <li>Are enum values coerced to integer?</li>
+                    <li>Any other type coerced to an enum type?</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b>Subrange Type: </b>ordered, contiguous subsequence of an ordinal type (supported in Ada)<ul>
+            <li>Type compatability checked at compile time</li>
+            <li>Range checking done at run-time</li>
+            <li>Example in Ada:&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            </ul>
+        </li>
+    </ul>
+    <blockquote style="margin-left: 120px">
+        <code>
+            type Days is (mon, tue, wed, thu, fri, sat, sun);
+            <br /><font color="Yellow">subtype</font> Weekdays is Days range mon..fri;
+            <br /><font color="Yellow">subtype</font> Index is Integer range 1..100;
+            <br />Day1: Days;
+            <br />Day2: Weekdays;
+            <br />Day2 := Day1;
+        </code>
+    </blockquote>
+    <ul>
+        <li><b>Evaluation of Enumerated and Subrange Types:</b><ul>
+            <li>Aids <font color="Yellow">readability</font> - Makes it clear that variables of enums or subrange can only 
+                store certain ranges of values</li>
+            <li>Aids <font color="Yellow">reliability</font> (compiler can check)<ul>
+                <li>limits type operations to what is meaningful</li>
+                <li>Enums cannot be assigned outside its defined range (either the enum type or a 
+                    subrange of it)</li>
+                <li>Ada, C#, Java 5 are better than C++ (Not coerced into integer types)</li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+    </ul>
 <div class="navbar" align="center" style="color: #FFFF00">
-<hr>
+<hr />
 <a href="strings.htm">previous</a> &nbsp; <a href="arrays.htm">next</a>
 &nbsp; <a href="DataTypes.htm">contents</a><br /><br />
 

@@ -1,11 +1,65 @@
-<html>
+﻿<html>
 <head>
 <title>Primitives</title>
 <link rel="Stylesheet" type="text/css" href="brief.css" />
 </head>
 <body>
 <h1 class="title" align="center">Primitives</h1>
-
+    <hr />
+    <ul>
+        <li><b>Primitive data types:</b> Those not defined in terms of other types
+            <ul>
+                <li>Provided by most all programming languages</li>
+                <li>Some merely reflections on hardware</li>
+                <li>Others need only minimal hardware support for implementatioin</li>
+            </ul>
+        </li>
+        <li><b>Integer:</b>
+            <ul>
+                <li>Up to eight integer types in a language</li>
+                <li>Java has byte, short, int, and long</li>
+            </ul>
+        </li>
+        <li><b>Floating Point:</b>
+            <ul>
+                <li>Approximations of real numbers (pi and e cannot be 
+                    correctly represented)</li>
+                <li>IEEE Floating-Point Standard 754, represented as 
+                    fractions and exponents.</li>
+                <li>The numerical value of a finite number is&nbsp; (−1)<sup><i>s</i></sup> × <i>c</i> × <i>b</i><sup><i>q </i></sup>where <i>b</i> is the base (2 or 10). For example, if the sign is 1 (indicating 
+                    negative), the significand is 12345, the exponent is −3, and the base is 10, 
+                    then the value of the number is −12.345.</li>
+                <p><img alt="floating point formats" src=floats.png style="height: 172px; width: 351px"/></p>
+            </ul>
+        </li>
+        <li><b>Complex:</b>
+            <ul>
+                <li>C99, Fortran, Python</li>
+                <li>Ordered pairs of floating point values (e.g. - In 
+                    Python - (7 + 3j), where j follows the imaginery part)</li>
+            </ul>
+        </li>
+        <li><b>Decimal:</b>
+            <ul>
+                <li>Used for money</li>
+                <li>Store a fixed number of decimal digits in Binary Coded Decimal (BCD) form</li>
+                <li><i>Advantage: </i>accuracy</li>
+                <li><i>Disadvantages:</i> limited range, wastes memory</li>
+            </ul>
+        </li>
+        <li><b>Boolean:</b>
+            <ul>
+                <li>&quot;true&quot; or &quot;false&quot;</li>
+                <li>Implemented as bytes</li>
+                <li><i>Advantage: </i>readability</li>
+            </ul>
+        </li>
+        <li><b>Character:</b>
+            <ul>
+                <li>Stored as numeric codings (ASCII, UCS-2, UCS-4)</li>
+            </ul>
+        </li>
+    </ul>
 <div class="navbar" align="center" style="color: #FFFF00">
 <hr>
 <a href="intro.htm">previous</a> &nbsp; <a href="strings.htm">next</a>

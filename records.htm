@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Records</title>
+<link rel="Stylesheet" type="text/css" href="brief.css" />
+</head>
+<body>
+<h1 class="title" align="center">Record Types</h1>
+    <hr />
+    <ul>
+        <li><b>Record Types: </b>an aggregate of <font color=yellow>possibly heterogeneous</font> data elements in which the individual 
+            elements are identified by names andaccessed through offsets from the beginning 
+            of the strucure</li>
+        <li><b>Design Issues:</b><ul>
+            <li>What is the syntactic form of references to fields?</li>
+            <li>Are elliptical references allowed?</li>
+            </ul>
+        </li>
+        <li><b>Definition in COBOL: </b>COBOL uses level numbers to show nested records; others 
+            use recursive definition<ul>
+                <li><code>01 EMPLOYEE-RECORD. <br />&nbsp;&nbsp; 02 EMPLOYEE-NAME. <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 05&nbsp;&nbsp; FIRST&nbsp; PICTURE X(20). <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 05&nbsp;&nbsp; MID&nbsp;&nbsp;&nbsp; PICTURE X(10). <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 05&nbsp;&nbsp; LAST&nbsp;&nbsp; PICTURE 
+                    X(20). <br />&nbsp;&nbsp; 02 HOURLY-RATE PICTURE 99V99.</code></li>
+            </ul>
+        </li>
+        <li><b>Definition in Ada: </b>record structures are indicated in an orthogonal way 
+            by simply nesting record defs inside other record defs</li>
+            <p><code>type Emp_Name_Type is record
+                <br />&nbsp;&nbsp;First: String (1..20);
+		        <br />&nbsp;&nbsp;Mid: String (1..10);
+		        <br />&nbsp;&nbsp;Last: String (1..20);
+	            <br />end record;
+		        <br />type Emp_Rec_Type is record
+                <br />&nbsp;&nbsp;Emp_Name: Emp_Name_Type;
+                <br />&nbsp;&nbsp;Hourly_Rate: Float;
+	            <br />end record;
+	            <br />Emp_Rec: Emp_Rec_Type;
+</code></p>
+        <li><b>References to Records:</b><ul>
+            <li>Record Field References:<ul>
+                <li>COBOL
+                    <ul>
+                        <li><code>field_name OF record_name_1 OF ... OF record_name_n</code></li>
+                    </ul>
+                </li>
+                <li>Others (dot notation)
+                    <ul>
+                        <li><code>record_name_1.record_name_2. ... record_name_n.field_name</code></li>
+                    </ul>
+                </li>
+                </ul>
+            </li>
+            <li>Fully qualified references must include all record names </li>
+            <li>Elliptical references allow leaving out record names as long as the reference is 
+                unambiguous, for example in COBOL 
+                <ul>
+                    <li><code>FIRST, FIRST OF EMPLOYEE-NAME, and FIRST of EMPLOYEE-RECORD</code>
+                are elliptical references to the employee’s first name </li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        <li><b>Operations on Records:</b><ul>
+            <li>Assignment is very common if the types are identical</li>
+            <li>Ada allows record comparison</li>
+            <li>Ada records can be initialized with aggregate literals</li>
+            <li>COBOL provides MOVE CORRESPONDING<ul>
+                <li>Copies a field of the source record to the corresponding field in the target 
+                    record</li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        <li><b>Evaluation:</b><ul>
+            <li>Records are used when collection of data values is heterogeneous</li>
+            <li>Access to array elements is much slower than access to record fields, because 
+                subscripts are dynamic (field names are static)</li>
+            <li>Dynamic subscripts could be used with record field access, but it would disallow 
+                type checking and it would be much slower </li>
+            </ul>
+        </li>
+        <li><b>Implementation:</b><ul>
+            <li>Offset address relative to the beginning of the records is associated with each 
+                field </li>
+            </ul>
+        <p><img alt="Record Compile-time Descriptors" src=records1.png 
+                style="height: 316px; width: 208px"/></p>
+         </li>
+    </ul>
+
+<div class="navbar" align="center" style="color: #FFFF00">
+<hr>
+<a href="assoc-arrays.htm">previous</a> &nbsp; <a href="unions.htm">next</a>
+&nbsp; <a href="DataTypes.htm">contents</a><br /><br />
+</div>
+
+</body>
+</html>

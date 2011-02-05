@@ -5,6 +5,43 @@
 </head>
 <body>
 <h1 class="title" align="center">Character Strings</h1>
+    <hr />
+    <ul>
+        <li><b>Character Strings:</b> Sequences of characters</li>
+        <li><b>Design Considerations:</b><ul>
+            <li>Primitive or special array?</li>
+            <li>Static or dynamic length?</li>
+            <p> <img src=strings1.png alt="Strings in various languages" style="height: 127px; width: 530px"/></p>
+            <p> <img src=strings2.png alt="String lengths in various languages" style="height: 127px; width: 530px"/></p>
+            </ul>
+        </li>
+        <li><b>Operations:</b><ul>
+            <li>Assignment (==)</li>
+            <li>Catenation</li>
+            <li>Substring Reference</li>
+            <li>Comparison (=, &gt;, ...)</li>
+            <li>Pattern Matching</li>
+            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li><b>Type Evaluation:</b>
+            <ul>
+                <li>Aids <font color="Yellow">writability</font></li>
+                <li>Including strings as primitives is not costly in either language or compiler 
+                    complexity</li>
+                <li>Dynamic strings are more flexible but overhead should be considered</li>
+                <li>String operations are essential and should be included</li>
+            </ul>
+        </li>
+        <li><b>Implementation:</b><ul>
+            <li>Static - compile-time descriptor</li>
+            <li>Limited Dynamic Length: may need run-time descriptor</li>
+            <li>Dynamic Length: run-time descriptor (alloc/dealloc is biggest problem)</li>
+            <p> <img src=strings3.png alt="String descriptors" style="height: 127px; width: 530px"/></p>
+            </ul>
+        </li>
+    </ul>
 
 <div class="navbar" align="center" style="color: #FFFF00">
 <hr>

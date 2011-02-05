@@ -5,10 +5,40 @@
 </head>
 <body>
 <h1 class="title" align="center">Associative Arrays</h1>
-
-<div class="navbar" align="center" style="color: #FFFF00">
+    <hr />
+    <ul>
+        <li><b>Associative Array:</b> an unordered collection of data elements that are indexed by 
+            an equal number of values called <font color="Yellow">keys</font><ul>
+                <li>User-defined keys must be stored in the structure</li>
+                <li>Directly supported by Perl, Python, Ruby and Lua</li>
+                <li>Supported by the Standard Class Libraries in Java, C++, and C#</li>
+            </ul>
+        </li>
+        <li><b>Design Issues:</b><ul>
+            <li>What is the form of references to their elements?</li>
+            </ul>
+        </li>
+        <li><b>Examples using Perl:</b> associative arrays are called hashes<ul>
+            <li>Hashes can be set to literal values with the assignment statement<ul>
+                <li><code>%salaries = (&quot;Gary&quot; =&gt; 75000, &quot;Perry&quot; =&gt; 57000, &quot;Mary&quot; =&gt; 55750, &quot;Cedric&quot; =&gt; 
+                    47850);</code></li>
+                </ul>
+            </li>
+            <li>The value part of hash elements is a scalar, so references to hash element 
+                values use scalar names<ul>
+                    <li><code>$salaries {&quot;Perry&quot;} = 58850; //also used to add elements</code></li>
+                </ul>
+            </li>
+            <li>Remove lements with the delete operator<ul>
+                <li><code>delete $salaries{&quot;Gary&quot;};</code></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="navbar" align="center" style="color: #FFFF00">
 <hr>
-<a href="arrays.htm">previous</a> &nbsp; <a href="primitives.htm">next</a>
+<a href="arrays.htm">previous</a> &nbsp; <a href="records.htm">next</a>
 &nbsp; <a href="DataTypes.htm">contents</a><br /><br />
 
 </div>
