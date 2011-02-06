@@ -5,10 +5,64 @@
 </head>
 <body>
 <h1 class="title" align="center">Type Equivalence</h1>
+    <hr />
+    <ul>
+        <li><b>Type Equivalence: </b>comparing structured types, such as arrays, records and 
+            some user-defined types requires more complex rules. Coercion is rare, so the 
+            issue is not type compatibility, but type equivalence.<ul>
+                <li>There are two approaches to defining type equivalence:
+                    <ul>
+                        <li>Name Type Equivalence</li>
+                        <li>Structure Type Equivalence</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b>Name Type Equivalence:</b> two variables have equivalent types if they are in 
+            either the same declaration or in declarations that use the same type name<ul>
+                <li>Easy to implement but more restrictive:
+                    <ul>
+                        <li>Subranges of integer types are not equivalent with integer types </li>
+                        <li>Formal parameters must be the same type as their corresponding actual parameters
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b>Structure Type Equivalence:</b> that two variables have equivalent types if 
+            their types have identical structures<ul>
+                <li>More flexible, but harder to implement </li>
+                <li>Entire structure of the two types must be compared</li>
+            </ul>
+        </li>
+        <li>Consider the problem of two structured types:
+            <ul>
+                <li>Are two record types equivalent if they are structurally the same but use 
+                    different field names? </li>
+                <li>Are two array types equivalent if they are the same except that the subscripts 
+                    are different? (e.g. [1..10] and [0..9]) </li>
+                <li>Are two enumeration types equivalent if they have the same number of components 
+                    but spell the literals differently? </li>
+                <li>With structural type equivalence, it disallows differentiating between types 
+                    with the same structure<ul>
+                        <p>These are considered equivalent:<br />
+                        <code>type Celsius = Float;</code><br />
+                        <code>type Fahrenheit = Float;</code></p>
+                        <p>Ada provides <font color=yellow>derived types</font> and <font color=yellow>subtypes</font> to avoid problems with Name Type Equivalence<br />
+                            <b>derived type </b>example (types are not equivalent):<br />
+                        <code>type Celsius is new Float;</code><br />
+                        <code>type Fahrenheit is new Float;</code><br />
+                        <br /><b>subtype </b>example (type equivalent with its parent type):<br />
+                        <code>subtype Small_type is Integer range0..99;</code></p>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 <div class="navbar" align="center" style="color: #FFFF00">
 <hr>
-<a href="strong-typing.htm">previous</a> &nbsp; <a href="theory.htm">next</a>
+<a href="type-checking.htm">previous</a> &nbsp; <a href="theory.htm">next</a>
 &nbsp; <a href="DataTypes.htm">contents</a><br /><br />
 </div>
 
