@@ -7,8 +7,8 @@
 <h1 class="title" align="center">Array Types</h1>
     <hr />
     <ul>
-        <li><b>Array Type:</b> collection of the <font color="Yellow">same type (homogeneuos)</font> of data elements in which each 
-            element is ID&#39;d by it&#39;s position in the collection, relative to the first 
+        <li><b>Array Type:</b> collection of the <font color="Yellow">same type (homogeneous)</font> of data elements in which each
+            element is ID&#39;d by it&#39;s position in the collection, relative to the first
             element.</li>
         <li><b>Design Issues:</b><ul>
             <li>What types are legal for subscripts?</li>
@@ -20,9 +20,9 @@
             <li>Are slices supported?</li>
             </ul>
         </li>
-        <li><b>Array Indexing:</b> Subscripting (or Indexing) is a mapping from subscripts 
+        <li><b>Array Indexing:</b> Subscripting (or Indexing) is a mapping from subscripts
             to elements in the array<ul>
-                <li>Subscript Syntax 
+                <li>Subscript Syntax
                     <ul>
                         <li>FORTRAN, PL/I, Ada use parentheses </li>
                     </ul>
@@ -48,7 +48,7 @@
             </li>
             <p><img alt="Array storage categories" src=arrays1.png style="height: 253px; width: 941px" /></p>
         </ul>
-        <li><b>Array Initialization:</b> Some languages allow initialization at the time of storage 
+        <li><b>Array Initialization:</b> Some languages allow initialization at the time of storage
             allocation<ul>
                 <li>C, C++, Java, C#<ul>
                     <li><code>int list [] = {4, 5, 7, 83};</code></li>
@@ -83,22 +83,22 @@
         </li>
         <li><b>Array Operations:</b> The most common array operations are <font color="Yellow">Assignment, Catenation, Comparison and Slices</font>
             <ul>
-                <li>C-based languages do not provide array operations except through methods of 
+                <li>C-based languages do not provide array operations except through methods of
                     Java, C++, and C#</li>
                 <li>Perl supports array operations but not comparisons</li>
-                <li>APL provides the most powerful array-processing operations operations ever 
+                <li>APL provides the most powerful array-processing operations ever
                     devised</li>
                 <li>Ada allows array assignment but also catenation</li>
-                <li>Python supports array assignments, but they are only reference changes. Python 
+                <li>Python supports array assignments, but they are only reference changes. Python
                     also supports array catenation and element membership operations</li>
                 <li>Ruby provides array catenation</li>
-                <li>Fortran provides elemental operations because they are between pairs of array 
-                    elements For example, + operator between two arrays results in an array of the 
+                <li>Fortran provides elemental operations because they are between pairs of array
+                    elements For example, + operator between two arrays results in an array of the
                     sums of the element pairs of the two arrays </li>
             </ul>
         </li>
         <li><b>Rectangular and Jagged Arrays</b><ul>
-            <li>A rectangular array is a multi-dimensioned array in which all of the rows have 
+            <li>A rectangular array is a multi-dimensioned array in which all of the rows have
                 the same number of elements and all columns have the same number of elements
             </li>
             <li>A jagged array has rows with varying number of elements<ul>
@@ -109,7 +109,7 @@
                 <li>&nbsp;<code>myArray[3][7]</code></li>
                 </ul>
             </li>
-            <li>Fortran, Ada, and C# support rectangular arrays (C# also supports jagged arrays)&nbsp; 
+            <li>Fortran, Ada, and C# support rectangular arrays (C# also supports jagged arrays)&nbsp;
                 - Use single pair of brackets:<ul>
                     <li>&nbsp;<code>myArray[3, 7]</code></li>
                 </ul>
@@ -122,7 +122,7 @@
             </ul>
         </li>
         <li><b>Accessing Multi-Dimensional Arrays:</b><ul>
-        <p><img alt="Multi-dimensional Array" src=matrix.png 
+        <p><img alt="Multi-dimensional Array" src=matrix.png
                 style="height: 94px; width: 151px"/></p>
             <li>Two common ways:<ul>
                 <li>Row Major Order - used in most languages<ul>
@@ -138,7 +138,7 @@
             </ul>
         </li>
         <li><b>Implementation</b>
-        <p><img alt="Array Compile-time Descriptors" src=arrays2.png 
+        <p><img alt="Array Compile-time Descriptors" src=arrays2.png
                 style="height: 211px; width: 339px"/></p>
     </ul>
 

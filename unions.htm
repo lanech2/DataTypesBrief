@@ -28,11 +28,28 @@
             <br />&nbsp;&nbsp; Filled: Boolean; 
             <br />&nbsp;&nbsp; Color: Colors; 
             <br />&nbsp;&nbsp; case Form is 
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Circle =&gt; Diameter: Float; 
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Triangle =&gt; Leftside, Rightside: Integer; Angle: Float; 
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Rectangle =&gt; Side1, Side2: Integer; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Circle =&gt; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diameter: Float; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Triangle =&gt;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leftside : Integer; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rightside: Integer; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Angle: Float; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when Rectangle =&gt; 
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Side_1, Side_2: Integer; 
             <br />&nbsp;&nbsp; end case; 
-            <br />end record;</code>
+            <br />end record;
+            <br />
+            <br />Figure_1 : Figure;
+            <br />Figure_2 : Figure(Form => Triangle);
+            <br />
+            <br />Figure_1 := (Filled => True,
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Color => Blue,
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form => Rectangle,
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Side_1 => 12,
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Side_2 => 3);
+            <br />
+            <br />if (Figure_1.Diameter > 3.0) ...  // should result in a type error caught at run-time
+            </code>
             </li>
         <p><img alt="Ada Union" src=unions.png style="height: 209px; width: 478px"/></p>
             </ul>

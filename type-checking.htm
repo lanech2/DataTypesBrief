@@ -13,30 +13,30 @@
 <h1 class="title" align="center">Type Checking and Strong Typing</h1>
     <hr />
     <ul>
-        <li><b>Type Checking:</b> the activity of ensuring that the operands of an 
+        <li><b>Type Checking:</b> the activity of ensuring that the operands of an
             operator are of compatible types<ul>
-                <li>Generalize the concept of operands and operators to include subprograms and 
+                <li>Generalize the concept of operands and operators to include subprograms and
             assignments </li>
             </ul>
         </li>
-        <li><b>Compatible Type:</b> is one that is either legal for the operator, or is allowed 
-            under language rules to be implicitly converted (<font color=yellow>coerced</font>), 
+        <li><b>Compatible Type:</b> is one that is either legal for the operator, or is allowed
+            under language rules to be implicitly converted (<font color=yellow>coerced</font>),
             by compiler- generated code, to a legal type</li>
-        <li><b>Type Error:</b> is the application of an operator to an operand of an 
+        <li><b>Type Error:</b> is the application of an operator to an operand of an
             inappropriate type</li>
         <li>If all type bindings are <font color=yellow>static</font>, nearly all type checking can be done <font color=yellow>statically</font> </li>
         <li>If type bindings are <font color=yellow>dynamic</font>, type checking must be done <font color=yellow>dynamically</font> (done at run-time)</li>
     </ul>
     <p>&nbsp;</p>
     <ul>
-        <li><b>Stong Typing:</b> A programming language is strongly typed if type errors are always detected </li>
-        <li><span class="style1">Advantage</span> of strong typing: allows the detection of the misuses of variables 
+        <li><b>Strong Typing:</b> A programming language is strongly typed if type errors are always detected </li>
+        <li><span class="style1">Advantage</span> of strong typing: allows the detection of the misuses of variables
             that result in type errors </li>
         <li><b>Language examples:</b>
             <ul>
-                <li>FORTRAN 95 is not strongl;y typed:
+                <li>FORTRAN 95 is not strongly typed:
                     <ul>
-                        <li>EQUIVALENCE (allows a variable of one type to refer to a value of a different 
+                        <li>EQUIVALENCE (allows a variable of one type to refer to a value of a different
                             type)</li>
                     </ul>
                 </li>
@@ -55,11 +55,11 @@
                 </li>
             </ul>
         </li>
-        <li>Coercion rules strongly affect strong typing--they can weaken it considerably 
+        <li>Coercion rules strongly affect strong typing--they can weaken it considerably
             (C++ versus Ada) </li>
-        <li>Languages with a lot of coercion, like Fortran, C, C++, are less reliable than 
+        <li>Languages with a lot of coercion, like Fortran, C, C++, are less reliable than
             those with little coercion, such as Ada</li>
-        <li>&nbsp;Java and C# have half as many assignment type coercions as C++, so their 
+        <li>&nbsp;Java and C# have half as many assignment type coercions as C++, so their
             error detection is better.</li>
     </ul>
 

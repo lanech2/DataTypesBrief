@@ -7,7 +7,7 @@
 <h1 class="title" align="center">Associative Arrays</h1>
     <hr />
     <ul>
-        <li><b>Associative Array:</b> an unordered collection of data elements that are indexed by 
+        <li><b>Associative Array:</b> an unordered collection of data elements that are indexed by
             an equal number of values called <font color="Yellow">keys</font><ul>
                 <li>User-defined keys must be stored in the structure</li>
                 <li>Directly supported by Perl, Python, Ruby and Lua</li>
@@ -20,16 +20,16 @@
         </li>
         <li><b>Examples using Perl:</b> associative arrays are called hashes<ul>
             <li>Hashes can be set to literal values with the assignment statement<ul>
-                <li><code>%salaries = (&quot;Gary&quot; =&gt; 75000, &quot;Perry&quot; =&gt; 57000, &quot;Mary&quot; =&gt; 55750, &quot;Cedric&quot; =&gt; 
+                <li><code>%salaries = (&quot;Gary&quot; =&gt; 75000, &quot;Perry&quot; =&gt; 57000, &quot;Mary&quot; =&gt; 55750, &quot;Cedric&quot; =&gt;
                     47850);</code></li>
                 </ul>
             </li>
-            <li>The value part of hash elements is a scalar, so references to hash element 
+            <li>The value part of hash elements is a scalar, so references to hash element
                 values use scalar names<ul>
                     <li><code>$salaries {&quot;Perry&quot;} = 58850; //also used to add elements</code></li>
                 </ul>
             </li>
-            <li>Remove lements with the delete operator<ul>
+            <li>Remove elements with the delete operator<ul>
                 <li><code>delete $salaries{&quot;Gary&quot;};</code></li>
                 </ul>
             </li>

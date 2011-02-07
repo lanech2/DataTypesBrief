@@ -13,12 +13,12 @@
 <h1 class="title" align="center">Pointers and Reference Types</h1>
     <hr />
     <ul>
-        <li><b>Pointer:</b> A pointer type variable has a range of values that consists of 
+        <li><b>Pointer:</b> A pointer type variable has a range of values that consists of
             memory addresses and a special value, <font color=yellow>nil</font>
             <ul>
                 <li>Provide the power of indirect addressing</li>
                 <li>Provide a way to manage dynamic memory</li>
-                <li>A pointer can be used to access a location in the area where storage is 
+                <li>A pointer can be used to access a location in the area where storage is
                     dynamically created (usually called a heap) </li>
             </ul>
         </li>
@@ -36,7 +36,7 @@
             <li>Two fundamental operations: assignment and dereferencing </li>
             <li>Assignment is used to set a pointer variable’s value to some useful address
             </li>
-            <li>Dereferencing yields the value stored at the location represented by the 
+            <li>Dereferencing yields the value stored at the location represented by the
                 pointer’s value
                 <ul>
                     <li>Dereferencing can be explicit or implicit </li>
@@ -53,13 +53,13 @@
         <li><b>Problems with Pointers:</b><ul>
             <li>Dangling pointers (dangerous)
                 <ul>
-                    <li>A pointer that contains the address of a heap-dynamic variable that has been 
+                    <li>A pointer that contains the address of a heap-dynamic variable that has been
                         deallocated </li>
                 </ul>
             </li>
             <li>Lost heap-dynamic variable (often called garbage)
                 <ul>
-                    <li>An allocated heap-dynamic variable that is no longer accessible to the user 
+                    <li>An allocated heap-dynamic variable that is no longer accessible to the user
                         program
                         <ol>
                             <li>Pointer p1 is set to point to a newly created heap-dynamic variable  </li>
@@ -74,9 +74,9 @@
         </li>
         <li><b>Pointers in Ada:</b><ul>
             <li>Called <b>access</b> types</li>
-            <li>The dangling-pointer problem is theoretically constrained in Ada because the 
-                implementor may implicitly deallocate heap-dynamic variables at the end of the 
-                scope of the pointer. Unfortunately, most Ada comilers do not implement this 
+            <li>The dangling-pointer problem is theoretically constrained in Ada because the
+                implementor may implicitly deallocate heap-dynamic variables at the end of the
+                scope of the pointer. Unfortunately, most Ada compilers do not implement this
                 form of garbage collection.</li>
             <li>The lost heap-dynamic variable problem is not eliminated by Ada&#39;s design.</li>
             </ul>
@@ -106,14 +106,14 @@
             </ul>
         </li>
         <li><b>Reference Types:</b><ul>
-            <li>C++ includes a special kind of reference type that is used primarily for formal 
+            <li>C++ includes a special kind of reference type that is used primarily for formal
                 parameters in function definitions
                 <ul>
-                    <li>Reference type variables are specified in definitions by preceding their names 
+                    <li>Reference type variables are specified in definitions by preceding their names
                         with ampersands (&amp;)</li>
                 </ul>
             </li>
-            <li>Java extends C++’s reference variables and allows them to replace pointers 
+            <li>Java extends C++’s reference variables and allows them to replace pointers
                 entirely
                 <ul>
                     <li>References are references to objects, rather than being addresses </li>
@@ -124,9 +124,9 @@
         </li>
         <li><b>Evaluation:</b><ul>
             <li>Dangling pointers and dangling objects are problems as is heap management</li>
-            <li>Pointers are like goto&#39;s--they widen the range of cells that can be accessed by 
+            <li>Pointers are like goto&#39;s--they widen the range of cells that can be accessed by
                 a variable </li>
-            <li>Pointers or references are necessary for dynamic data structures--so we can&#39;t 
+            <li>Pointers or references are necessary for dynamic data structures--so we can&#39;t
                 design a language without them </li>
             </ul>
         </li>
@@ -142,10 +142,10 @@
             </li>
             <li><font color=yellow>Locks-and-keys:</font> Pointer values are represented as (key, address) pairs
                 <ul>
-                    <li>Heap-dynamic variables are represented as the storage for a variable plus a 
-                        header cell for integer lock 
+                    <li>Heap-dynamic variables are represented as the storage for a variable plus a
+                        header cell for integer lock
                         value </li>
-                    <li>When a heap-dynamic variable is allocated, a lock value is created and placed in lock 
+                    <li>When a heap-dynamic variable is allocated, a lock value is created and placed in lock
                         cell of the variable and the key cell of the pointer</li>
                     <li>Any number of pointers can reference a heap-dynamic variable</li>
                     <li>When deallocated, the lock value is cleared to an illegal lock value</li>
@@ -158,32 +158,32 @@
             <li>Single-size cells vs. variable-size cells </li>
             <li>Two approaches to reclaim garbage
                 <ul>
-                    <li>Reference counters (<font color=yellow>eager approach</font>): reclamation is gradual 
+                    <li>Reference counters (<font color=yellow>eager approach</font>): reclamation is gradual
                         <ul>
-                            <li>maintain a counter in every cell that stores the number of pointers currently 
+                            <li>maintain a counter in every cell that stores the number of pointers currently
                                 pointing at the cell </li>
-                            <li><span class="style1">Disadvantages</span>: space required, execution time 
+                            <li><span class="style1">Disadvantages</span>: space required, execution time
                                 required, complications for cells connected circularly</li>
-                            <li><span class="style1">Advantage</span>: it is intrinsically incremental, so 
+                            <li><span class="style1">Advantage</span>: it is intrinsically incremental, so
                                 significant delays in the application execution are avoided </li>
                         </ul>
                     </li>
-                    <li>Mark-sweep (<font color=yellow>lazy approach</font>): reclamation occurs when the list of variable space 
-                        becomes empty 
+                    <li>Mark-sweep (<font color=yellow>lazy approach</font>): reclamation occurs when the list of variable space
+                        becomes empty
                         <ul>
-                            <li>The run-time system allocates storage cells as requested and disconnects 
+                            <li>The run-time system allocates storage cells as requested and disconnects
                                 pointers from cells as necessary; mark-sweep then begins
                                 <ul>
                                     <li>Every heap cell has an extra bit used by the collection algorithm </li>
                                     <li>All cells are initially set to garbage </li>
-                                    <li>All pointers are traced into the heap, and reachable cells are marked as not 
+                                    <li>All pointers are traced into the heap, and reachable cells are marked as not
                                         garbage </li>
                                     <li>All garbage cells are returned to list of available cells </li>
                                 </ul>
                             </li>
-                            <li><span class="style1">Disadvantages</span>: in its original form, it was done too 
-                                infrequently. When done, it caused significant delays in application execution. 
-                                Contemporary mark-sweep algorithms avoid this by doing it more often—called 
+                            <li><span class="style1">Disadvantages</span>: in its original form, it was done too
+                                infrequently. When done, it caused significant delays in application execution.
+                                Contemporary mark-sweep algorithms avoid this by doing it more often—called
                                 <font color=yellow>incremental mark-sweep</font> </li>
                         </ul>
                     </li>
